@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_height">160dp</dimen>
+    <dimen name="screen_text_size">50sp</dimen>
+    <dimen name="height_equals_btn">190dp</dimen>
+    <dimen name="text_size_btn">40sp</dimen>
+    <dimen name="padding_for_buttons">15dp</dimen>
+    <dimen name="bottom_padding_for_screen">10dp</dimen>
+    <dimen name="width_zero_btn">186dp</dimen>
+    <dimen name="width_point_btn">88dp</dimen>
+</resources>
