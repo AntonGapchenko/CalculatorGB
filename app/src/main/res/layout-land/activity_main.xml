@@ -10,131 +10,137 @@
 
     <TextView
         android:id="@+id/screen"
-        style="@style/screen_style"
+        style="@style/screen_style_land"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/screen_height"
+        android:layout_height="@dimen/screen_height_land"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/reset"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="@dimen/margin_start"
         android:text="@string/reset"
-        app:layout_constraintEnd_toStartOf="@+id/multiply"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/screen" />
 
     <Button
         android:id="@+id/multiply"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="@dimen/margin_start_multiply_divide_equals"
         android:text="@string/multiply"
-        app:layout_constraintEnd_toStartOf="@+id/divide"
         app:layout_constraintStart_toEndOf="@+id/reset"
         app:layout_constraintTop_toBottomOf="@+id/screen" />
 
     <Button
         android:id="@+id/divide"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="@dimen/margin_start_multiply_divide_equals"
         android:text="@string/divide"
-        app:layout_constraintEnd_toStartOf="@+id/erase"
         app:layout_constraintStart_toEndOf="@+id/multiply"
         app:layout_constraintTop_toBottomOf="@+id/screen" />
 
     <Button
         android:id="@+id/erase"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="@dimen/margin_start_backspace"
         android:text="@string/erase"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/divide"
         app:layout_constraintTop_toBottomOf="@+id/screen" />
 
     <Button
         android:id="@+id/seven_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start"
         android:text="@string/seven"
-        app:layout_constraintEnd_toStartOf="@+id/eight_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reset" />
 
     <Button
         android:id="@+id/eight_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/eight"
-        app:layout_constraintEnd_toStartOf="@+id/nine_btn"
         app:layout_constraintStart_toEndOf="@+id/seven_btn"
         app:layout_constraintTop_toBottomOf="@+id/multiply" />
 
     <Button
         android:id="@+id/nine_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/nine"
-        app:layout_constraintEnd_toStartOf="@+id/minus"
         app:layout_constraintStart_toEndOf="@+id/eight_btn"
         app:layout_constraintTop_toBottomOf="@+id/divide" />
 
     <Button
         android:id="@+id/minus"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="9dp"
         android:text="@string/minus"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nine_btn"
         app:layout_constraintTop_toBottomOf="@+id/erase" />
 
     <Button
         android:id="@+id/four_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start"
         android:text="@string/four"
-        app:layout_constraintEnd_toStartOf="@+id/five_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seven_btn" />
 
     <Button
         android:id="@+id/five_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/five"
-        app:layout_constraintEnd_toStartOf="@+id/six_btn"
         app:layout_constraintStart_toEndOf="@+id/four_btn"
         app:layout_constraintTop_toBottomOf="@+id/eight_btn" />
 
     <Button
         android:id="@+id/six_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/six"
-        app:layout_constraintEnd_toStartOf="@+id/plus"
         app:layout_constraintStart_toEndOf="@+id/five_btn"
         app:layout_constraintTop_toBottomOf="@+id/nine_btn" />
 
     <Button
         android:id="@+id/plus"
-        style="@style/functional_buttons_style"
+        style="@style/functional_buttons_style_land"
+        android:layout_marginStart="9dp"
         android:text="@string/plus"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/six_btn"
         app:layout_constraintTop_toBottomOf="@+id/minus" />
 
     <Button
         android:id="@+id/one_btn"
 
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start"
         android:text="@string/one"
-        app:layout_constraintEnd_toStartOf="@+id/two_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/four_btn" />
 
     <Button
         android:id="@+id/two_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/two"
-        app:layout_constraintEnd_toStartOf="@+id/three_btn"
         app:layout_constraintStart_toEndOf="@+id/one_btn"
         app:layout_constraintTop_toBottomOf="@+id/five_btn" />
 
     <Button
         android:id="@+id/three_btn"
-        style="@style/btn_number_style"
+        style="@style/btn_number_style_land"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/three"
-        app:layout_constraintEnd_toStartOf="@+id/equals"
         app:layout_constraintStart_toEndOf="@+id/two_btn"
         app:layout_constraintTop_toBottomOf="@+id/six_btn" />
 
@@ -142,29 +148,31 @@
         android:id="@+id/equals"
         style="@style/equals_btn_style"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/height_equals_btn"
+        android:layout_height="@dimen/equals_btn_height_land"
+        android:layout_marginStart="@dimen/margin_start_multiply_divide_equals"
         android:text="@string/equals"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/three_btn"
         app:layout_constraintTop_toBottomOf="@+id/plus" />
 
     <Button
         android:id="@+id/point"
-        style="@style/zero_and_point_style"
+        style="@style/zero_and_point_btn_land"
         android:layout_width="@dimen/width_point_btn"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start"
         android:text="@string/point"
-        app:layout_constraintEnd_toStartOf="@+id/zero_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/one_btn" />
 
     <Button
         android:id="@+id/zero_btn"
-        style="@style/zero_and_point_style"
-        android:layout_width="@dimen/width_zero_btn"
+        style="@style/zero_and_point_btn_land"
+        android:layout_width="@dimen/zero_btn_width_land"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start_second_third_row"
         android:text="@string/zero"
-        app:layout_constraintEnd_toStartOf="@+id/equals"
         app:layout_constraintStart_toEndOf="@+id/point"
         app:layout_constraintTop_toBottomOf="@+id/two_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
