@@ -5,10 +5,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class MainActivity extends AppCompatActivity {
     private static final String KEY = "MEMORY_SCREEN";
@@ -16,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Calculator calculator;
     private Button resetBtn;
     private Button eraseBtn;
+    private Switch themeSwitch;
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         display = findViewById(R.id.screen);
         resetBtn = findViewById(R.id.reset);
         eraseBtn = findViewById(R.id.erase);
+        themeSwitch = findViewById(R.id.switch_theme);
 
         int[] numberIds = new int[]{
                 R.id.one_btn,
@@ -89,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
             findViewById(operationId).setOnClickListener(actionClickListener);
 
         }
+        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (themeSwitch.isChecked()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        });
 
     }
 
