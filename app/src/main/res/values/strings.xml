@@ -19,4 +19,7 @@
     <string name="nine">9</string>
     <string name="zero">0</string>
     <string name="change_theme">Смена Темы</string>
+    <string name="settings">Выбор Темы</string>
+    <string name="switch_theme">Смена темы</string>
+    <string name="button_back">Назад</string>
 </resources>

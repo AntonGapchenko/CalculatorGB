@@ -22,8 +22,12 @@
     <dimen name="margin_start_multiply_divide_equals">9dp</dimen>
     <dimen name="margin_start_backspace">7dp</dimen>
     <dimen name="margin_start_second_third_row">8dp</dimen>
-    <dimen name="switch_text_size">20sp</dimen>
-    <dimen name="margin_top_switch">12dp</dimen>
+    <dimen name="btn_settings_text_size">20sp</dimen>
+    <dimen name="margin_top">12dp</dimen>
+    <dimen name="stroke_width">1dp</dimen>
+    <dimen name="corner_radius">20dp</dimen>
+    <dimen name="margin_button_top">84dp</dimen>
+    <dimen name="margin_top_btn_theme_chooser">120dp</dimen>
 
 
 </resources>

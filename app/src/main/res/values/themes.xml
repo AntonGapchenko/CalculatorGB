@@ -18,6 +18,6 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/gray</item>
 
-
     </style>
+
 </resources>

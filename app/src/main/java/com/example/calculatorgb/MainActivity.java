@@ -1,17 +1,17 @@
 package com.example.calculatorgb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String KEY = "MEMORY_SCREEN";
@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Calculator calculator;
     private Button resetBtn;
     private Button eraseBtn;
-    private Switch themeSwitch;
+    private SharedPref sharedPref;
+
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -31,14 +32,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            sharedPref.setNightModeState(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            sharedPref.setNightModeState(false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         display = findViewById(R.id.screen);
         resetBtn = findViewById(R.id.reset);
         eraseBtn = findViewById(R.id.erase);
-        themeSwitch = findViewById(R.id.switch_theme);
+        findViewById(R.id.settings_btn).setOnClickListener(v -> {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        });
 
         int[] numberIds = new int[]{
                 R.id.one_btn,
@@ -94,13 +105,7 @@ public class MainActivity extends AppCompatActivity {
             findViewById(operationId).setOnClickListener(actionClickListener);
 
         }
-        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (themeSwitch.isChecked()) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        });
+
 
     }
 

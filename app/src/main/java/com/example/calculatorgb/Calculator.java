@@ -7,7 +7,7 @@ import static java.lang.Double.*;
 public class Calculator implements Serializable {
     private double firstArg;
     private double secondArg;
-
+    private final String ERROR = "Ошибка";
 
 
     private int actionSelected;
@@ -73,7 +73,7 @@ public class Calculator implements Serializable {
                     if (inputString.length() == 0) {
                         inputString.append("0.");
 
-                    } else {
+                    } else if (!inputString.toString().contains(".")) {
                         inputString.append(".");
                     }
                     break;
@@ -103,7 +103,7 @@ public class Calculator implements Serializable {
                     if (secondArg != 0) {
                         inputString.append(transformDoubleToInt(firstArg / secondArg));
                     } else {
-                        inputString.append("Ошибка");
+                        inputString.append(ERROR);
                     }
                     break;
 

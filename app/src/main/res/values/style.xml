@@ -13,6 +13,7 @@
     <style name="screen_style_land" parent="screen_style">
         <item name="android:textSize">@dimen/screen_text_size_land</item>
         <item name="android:paddingEnd">@dimen/padding_screen_end_land</item>
+        <item name="android:layout_marginTop">@dimen/margin_top</item>
     </style>
 
 

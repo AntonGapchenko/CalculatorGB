@@ -167,15 +167,21 @@
         app:layout_constraintStart_toEndOf="@+id/point"
         app:layout_constraintTop_toBottomOf="@+id/two_btn" />
 
-    <Switch
-        android:id="@+id/switch_theme"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/change_theme"
-        android:textColor="@color/white"
-        android:textSize="@dimen/switch_text_size"
+        android:layout_marginTop="@dimen/margin_top"
+        android:backgroundTint="@color/brown"
+        android:padding="@dimen/padding_for_buttons"
+        android:text="@string/settings"
+        android:textAllCaps="false"
+        android:textSize="@dimen/btn_settings_text_size"
+        app:cornerRadius="@dimen/corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zero_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/zero_btn"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/stroke_width" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
