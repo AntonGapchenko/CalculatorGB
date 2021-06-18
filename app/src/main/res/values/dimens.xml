@@ -3,7 +3,7 @@
 
     <dimen name="screen_height">160dp</dimen>
     <dimen name="screen_height_land">50dp</dimen>
-    <dimen name="screen_text_size">50sp</dimen>
+    <dimen name="screen_text_size">45sp</dimen>
     <dimen name="screen_text_size_land">35sp</dimen>
     <dimen name="height_equals_btn">190dp</dimen>
     <dimen name="text_size_btn">40sp</dimen>
@@ -22,6 +22,8 @@
     <dimen name="margin_start_multiply_divide_equals">9dp</dimen>
     <dimen name="margin_start_backspace">7dp</dimen>
     <dimen name="margin_start_second_third_row">8dp</dimen>
+    <dimen name="switch_text_size">20sp</dimen>
+    <dimen name="margin_top_switch">12dp</dimen>
 
 
 </resources>

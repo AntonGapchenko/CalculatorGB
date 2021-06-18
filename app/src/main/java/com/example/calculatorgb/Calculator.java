@@ -9,8 +9,9 @@ public class Calculator implements Serializable {
     private double secondArg;
 
 
+
     private int actionSelected;
-    private StringBuilder inputString = new StringBuilder();
+    private final StringBuilder inputString = new StringBuilder();
     private State state;
 
 
@@ -26,6 +27,8 @@ public class Calculator implements Serializable {
     }
 
     public void onNumberPressed(int buttonId) {
+
+
         if (state == State.resultShow) {
             state = State.firstArgInput;
             inputString.setLength(0);
@@ -67,7 +70,12 @@ public class Calculator implements Serializable {
                     inputString.append("9");
                     break;
                 case R.id.point:
-                    inputString.append(".");
+                    if (inputString.length() == 0) {
+                        inputString.append("0.");
+
+                    } else {
+                        inputString.append(".");
+                    }
                     break;
 
             }
@@ -83,16 +91,20 @@ public class Calculator implements Serializable {
             inputString.setLength(0);
             switch (actionSelected) {
                 case R.id.plus:
-                    inputString.append(firstArg + secondArg);
+                    inputString.append(transformDoubleToInt(firstArg + secondArg));
                     break;
                 case R.id.minus:
-                    inputString.append(firstArg - secondArg);
+                    inputString.append(transformDoubleToInt(firstArg - secondArg));
                     break;
                 case R.id.multiply:
-                    inputString.append(firstArg * secondArg);
+                    inputString.append(transformDoubleToInt(firstArg * secondArg));
                     break;
                 case R.id.divide:
-                    inputString.append(firstArg / secondArg);
+                    if (secondArg != 0) {
+                        inputString.append(transformDoubleToInt(firstArg / secondArg));
+                    } else {
+                        inputString.append("Ошибка");
+                    }
                     break;
 
             }
@@ -113,8 +125,10 @@ public class Calculator implements Serializable {
                 return '-';
             case R.id.multiply:
                 return '*';
+            case R.id.divide:
+                return '÷';
             default:
-                return '/';
+                return (char) firstArg;
 
 
         }
@@ -124,15 +138,15 @@ public class Calculator implements Serializable {
         StringBuilder str = new StringBuilder();
         switch (state) {
             case operationSelected:
-                return str.append(firstArg).append(getOperationChar()).toString();
+                return str.append(transformDoubleToInt(firstArg)).append(getOperationChar()).toString();
             case secondArgInput:
-                return str.append(firstArg)
+                return str.append(transformDoubleToInt(firstArg))
                         .append(getOperationChar())
                         .append(inputString).toString();
             case resultShow:
-                return str.append(firstArg)
+                return str.append(transformDoubleToInt(firstArg))
                         .append(getOperationChar())
-                        .append(secondArg).append("=")
+                        .append(transformDoubleToInt(secondArg)).append("=")
                         .append(inputString.toString()).toString();
             default:
                 return inputString.toString();
@@ -149,6 +163,16 @@ public class Calculator implements Serializable {
         if (inputString.length() != 0) {
             inputString.setLength(inputString.length() - 1);
         }
-
     }
+
+    private String transformDoubleToInt(double number) {
+        String result = "";
+        if (number % 1 == 0)
+            result += (int) number;
+        else
+            result += number;
+        return result;
+    }
+
+
 }
